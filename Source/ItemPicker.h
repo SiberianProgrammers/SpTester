@@ -20,8 +20,6 @@ class ItemPicker
         QList<QQuickItem *> itemAt(qreal x, qreal y);
 
     private:
-
-    private:
         const QQmlApplicationEngine & _engine;
 };
 

@@ -3,7 +3,7 @@ QT += quick
 CONFIG += c++17
 
 SOURCES += \
-        Source/EventWatcher.cpp \
+        Source/EventSender.cpp \
         Source/ItemPicker.cpp \
         Source/Main.cpp \
         Source/Platform.cpp \
@@ -21,7 +21,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    Source/EventWatcher.h \
+    Source/EventSender.h \
     Source/ItemPicker.h \
     Source/Platform.h \
     Source/QmlDebuger.h

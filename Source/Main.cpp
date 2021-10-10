@@ -1,5 +1,6 @@
 /// @author M. A. Serebrennikov
 #include "Platform.h"
+#include "EventSender.h"
 #include "QmlDebuger.h"
 
 #include <QGuiApplication>
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     QQmlContext *context = engine.rootContext();
 
+    qRegisterMetaType<EventSender*>("EventSender*");
     QmlDebuger qmlDebuger(engine);
 
     context->setContextProperty("dp", Platform::dp());
