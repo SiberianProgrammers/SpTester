@@ -1,11 +1,14 @@
 /// @author M. A. Serebrennikov
 #include "QmlDebuger.h"
+#include "Screenshoter.h"
 
 #include <QDebug>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQmlContext>
 #include <QQuickItem>
+#include <QStandardPaths>
+#include <QStringBuilder>
 
 namespace sp {
 
@@ -30,6 +33,20 @@ void QmlDebuger::logItemAt(qreal x, qreal y)
     if (!hasItems) {
         qDebug() << "No item at" << x << y;
     }
+}
+
+void QmlDebuger::captureWindow()
+{
+    QImage screenshot = Screenshoter::captureWindow();
+    screenshot.save(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)
+                    % "/screenshot.png");
+}
+
+void QmlDebuger::captureRectangle(const QRect & rectangle)
+{
+    QImage screenshot = Screenshoter::captureRectangle(rectangle);
+    screenshot.save(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)
+                    % "/screenshot.png");
 }
 
 } // namespace sp

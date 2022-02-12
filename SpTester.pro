@@ -7,7 +7,9 @@ SOURCES += \
         Source/ItemPicker.cpp \
         Source/Main.cpp \
         Source/Platform.cpp \
-        Source/QmlDebuger.cpp
+        Source/QmlDebuger.cpp \
+        Source/Screenshoter.cpp \
+        Source/SignalBlocker.cpp
 
 INCLUDEPATH += Source/
 
@@ -24,4 +26,6 @@ HEADERS += \
     Source/EventSender.h \
     Source/ItemPicker.h \
     Source/Platform.h \
-    Source/QmlDebuger.h
+    Source/QmlDebuger.h \
+    Source/Screenshoter.h \
+    Source/SignalBlocker.hpp

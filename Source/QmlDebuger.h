@@ -1,8 +1,9 @@
 /// @author M. A. Serebrennikov
 #pragma once
 
-#include "ItemPicker.h"
 #include "EventSender.h"
+#include "ItemPicker.h"
+#include "Screenshoter.h"
 
 #include <QObject>
 
@@ -29,6 +30,12 @@ class QmlDebuger : public QObject
 
         /** Выводит в лог название элемента в координатах (x, y). */
         Q_INVOKABLE void logItemAt(qreal x, qreal y);
+
+        /** Сохраняет изображение окна на рабочий стол (для отладки). */
+        Q_INVOKABLE void captureWindow();
+
+        /** Сохраняет прямоугольную область окна. */
+        Q_INVOKABLE void captureRectangle(const QRect & rectangle);
 
     private:
         const QQmlApplicationEngine & _engine;

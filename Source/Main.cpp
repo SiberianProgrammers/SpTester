@@ -1,7 +1,8 @@
 /// @author M. A. Serebrennikov
-#include "Platform.h"
 #include "EventSender.h"
+#include "Platform.h"
 #include "QmlDebuger.h"
+#include "SignalBlocker.hpp"
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -18,9 +19,11 @@ int main(int argc, char *argv[])
 
     qRegisterMetaType<EventSender*>("EventSender*");
     QmlDebuger qmlDebuger(engine);
+    SignalBlocker signalBlocker;
 
     context->setContextProperty("dp", Platform::dp());
     context->setContextProperty("qmlDebuger", &qmlDebuger);
+    context->setContextProperty("signalBlocker", &signalBlocker);
 
     engine.addImportPath("qrc:///");
     engine.load("qrc:/Main.qml");

@@ -17,10 +17,10 @@ class EventSender : public QObject
 
     public:
         /** Посылает событие нажатия кнопки мыши в середине элемента. */
-        Q_INVOKABLE void sendClick(QQuickItem * item);
+        Q_INVOKABLE static void sendClick(QQuickItem * item);
 
     private:
-        const int _clickInterval = 100;
+        static const int _clickInterval = 100;
 };
 
 } // namespace sp

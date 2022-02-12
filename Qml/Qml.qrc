@@ -4,5 +4,7 @@
         <file>Consts.qml</file>
         <file>Colors.qml</file>
         <file>qmldir</file>
+        <file>ItemPickerDebuger.qml</file>
+        <file>EventSenderDebuger.qml</file>
     </qresource>
 </RCC>
