@@ -14,7 +14,6 @@ class EventSender : public QObject
 {
     Q_OBJECT
 
-
     public:
         /** Посылает событие нажатия кнопки мыши в середине элемента. */
         Q_INVOKABLE static void sendClick(QQuickItem * item);
